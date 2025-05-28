@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  api:
+    build: ./backend
+    ports: ["5000:81"]
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=HENRIQUE_CHAPA;Database=InventoryControl;User=UserTeste;Password=123456;TrustServerCertificate=true
+    depends_on: [db]
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      UserTeste_PASSWORD: "123456"
+      ACCEPT_EULA: "Y"
+    ports: ["1433:1433"]
+    volumes: [sql_data:/var/opt/mssql]
+
+  frontend:
+    build: ./frontend
+    ports: ["8080:81"]
+    depends_on: [api]
+
+volumes:
+  sql_data:

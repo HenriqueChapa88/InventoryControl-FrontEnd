@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Control</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Inventory Control</h1>
+            <div id="auth-section">
+                <button id="login-btn">Login</button>
+                <button id="register-btn">Register</button>
+                <button id="logout-btn" style="display:none;">Logout</button>
+            </div>
+        </header>
+
+        <!-- Login/Register modals -->
+        <div id="login-modal" class="modal">...</div>
+        <div id="register-modal" class="modal">...</div>
+
+        <main>
+            <div id="content">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="suppliers">Suppliers</button>
+                    <button class="tab-btn" data-tab="items">Items</button>
+                </div>
+
+                <div id="suppliers" class="tab-content active">
+                    <h2>Suppliers</h2>
+                    <button id="add-supplier-btn" class="add-btn">Add Supplier</button>
+                    <table id="suppliers-table">
+                        <thead>...</thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div id="items" class="tab-content">
+                    <h2>Items</h2>
+                    <button id="add-item-btn" class="add-btn">Add Item</button>
+                    <table id="items-table">
+                        <thead>...</thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Form modal -->
+    <div id="form-modal" class="modal">...</div>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/suppliers.js"></script>
+    <script src="/js/items.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
